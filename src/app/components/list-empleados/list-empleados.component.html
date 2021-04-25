@@ -4,7 +4,8 @@
            
             <span class="h3">Listado de Empleados</span>
             <button class="btn btn-dark btn-lg float-end" routerLink="/crear-empleado">Nuevo</button>
-            <table class="table table-striped mt-5">
+           
+            <table  class="table table-striped mt-5">
                 <thead>
                   <tr>
                     <th>Nombre</th>
@@ -20,8 +21,8 @@
                     <td>{{em.apellido}}</td>
                     <td>{{em.documento}}</td>
                     <td>{{em.salario | currency}}</td>
-                    <td><i class="fas fa-edit fa-lg text-info " style="margin-top: 10px;"></i>
-                    <i class="fas fa-trash fa-lg text-danger " style="margin-left: 10px;"></i>
+                    <td><i class="fas fa-edit fa-lg text-info " style="margin-top: 10px;" [routerLink]="['/editEmpleado/',em.id]"></i>
+                    <i (click)="eliminarEmpleado(em.id)" class="fas fa-trash fa-lg text-danger " style="margin-left: 10px;"></i>
                     </td>
                   </tr>
                  
